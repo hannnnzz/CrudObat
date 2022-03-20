@@ -1,0 +1,36 @@
+extends ../layout/base 
+block content 
+	section.content-header 
+		h1 
+			| Info Obat
+			small Info Obat
+		ol.breadcrumb 
+			li 
+				a(href='#') 
+					i.fa.fa-dashboard
+					| Dashboard 
+			li.active Here 
+	section.content
+		.box
+			.box-header.with-border
+				h3.box-title
+					| Data Obat
+				.box-tools.pull-right
+					button(type='button', data-widget='collapse', data-toggle='tooltip',title='collapse').btn.btn-box-tool
+						i.fa.fa-minus
+					
+			.box-body
+				form(role='form',method='post' action='/drugs/edit/#{(id==undefined) ? data.id : id}')
+					.row
+						
+						.col-xs-6
+								.form-group
+									h4(style='font-weight:bold')
+										if data.gambar
+												img(src="/images/upload/#{data.gambar}" height=300 width=350)
+											else
+												img(src="/images/upload/null.png" height=300 width=350)
+										br
+										|#{data.nama} adalah obat dengan kategori #{data.kategori}, dan diproduksi oleh #{data.produsen}.
+								a(href='/drugs').btn.btn-primary
+									| Back

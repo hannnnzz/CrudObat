@@ -1,0 +1,64 @@
+doctype html
+html
+	head
+		title
+			| #{title}
+		meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport')
+		link(href='https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap' rel='stylesheet')
+		link(rel='stylesheet' href='/adminlte/template/fonts/icomoon/style.css')
+		link(rel='stylesheet' href='/adminlte/template/css/owl.carousel.min.css')
+		link(rel='stylesheet' href='/adminlte/template/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/adminlte/template/css/style.css')
+		link(rel='stylesheet' href='/font-awesome/css/font-awesome.css')
+		link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')
+		link(rel='stylesheet' href='/adminlte/dist/css/AdminLTE.min.css')
+		link(rel='stylesheet' href='/adminlte/plugins/iCheck/square/blue.css')
+
+	body
+	.d-md-flex.half
+		.bg(style="background-image: url('/adminlte/template/images/bg1.jpg');")
+		.contents
+			.container
+				.row.align-items-center.justify-content-center
+					.col-md-12
+						.form-block.mx-auto
+							.text-center.mb-5
+								h3
+									| Kimia 
+									strong Farma
+							form(action='/login/' method='post')
+								- if (messages.msg_error) 
+									.alert.alert-danger.alert-dismissable 
+										button.close(type='button' data-dismiss='alert' aria-hidden='true') 
+											| ×
+										h5
+											i.icon.fa.fa-ban
+											| Alert! 
+										| !{messages.msg_error}
+								- if  (messages.msg_info)
+									.alert.alert-success.alert-dismissable
+										button.close(type='button' data-dismiss='alert' aria-hidden='true')
+											| ×
+										h5
+											i.icon.fa.fa-check
+											| Success!
+										| !{messages.msg_info}
+								.form-group.first
+									input#username.form-control(type="email" placeholder="Email" name="txtEmail")
+								.form-group.last.mb-3
+									input#password.form-control(type="password" placeholder="Password" name="txtPassword")
+								.d-sm-flex.mb-5.align-items-center
+									label.control.control--checkbox.mb-3.mb-sm-0
+										span.caption Remember me
+										input(type='checkbox' checked='checked')
+										.control__indicator
+									span.ml-auto
+										a.forgot-pass(href='#') Forgot Password
+								input.btn.btn-block.btn-primary(type='submit' value='Log In')
+								a.forgot-pass(style="font-color:black;" )(href='/register') Register an access
+
+script(type='text/javascript' src='/adminlte/plugins/jQuery/jquery-2.2.3.min.js')
+script(type='text/javascript' src='/adminlte/bootstrap/js/bootstrap.min.js')
+script(type='text/javascript' src='/adminlte/plugins/iCheck/icheck.min.js')
+script(type='text/javascript' src='/adminlte/dist/js/login.js')

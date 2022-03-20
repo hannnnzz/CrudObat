@@ -1,0 +1,60 @@
+doctype html
+html
+	head
+		title
+			| #{title}
+		meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport')
+		link(href='https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap' rel='stylesheet')
+		link(rel='stylesheet' href='/adminlte/template/fonts/icomoon/style.css')
+		link(rel='stylesheet' href='/adminlte/template/css/owl.carousel.min.css')
+		link(rel='stylesheet' href='/adminlte/template/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/adminlte/template/css/style.css')
+		link(rel='stylesheet' href='/font-awesome/css/font-awesome.css')
+		link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+		link(rel='stylesheet' href='/adminlte/dist/css/AdminLTE.min.css')
+		link(rel='stylesheet' href='/adminlte/plugins/iCheck/square/blue.css')
+
+	body
+	.d-md-flex.half
+		.bg(style="background-image: url('/adminlte/template/images/bg1.jpg');")
+		.contents
+			.container
+				.row.align-items-center.justify-content-center
+					.col-md-12
+						.form-block.mx-auto
+							.text-center.mb-5
+								h4
+									| Kimia 
+									strong Farma
+							form(action='/register' method='post')
+								- if (messages.msg_error) 
+									.alert.alert-danger.alert-dismissable 
+										button.close(type='button' data-dismiss='alert' aria-hidden='true') 
+											| ×
+										h5
+											i.icon.fa.fa-ban
+											| Alert! 
+										| !{messages.msg_error}
+								- if  (messages.msg_info)
+									.alert.alert-success.alert-dismissable
+										button.close(type='button' data-dismiss='alert' aria-hidden='true')
+											| ×
+										h5
+											i.icon.fa.fa-check
+											| Success!
+										| !{messages.msg_info}
+								.form-group.first
+									input#username.form-control(type="email",placeholder="Email",name="email")
+								.form-group.first
+									input#username.form-control(type="name",placeholder="Name",name="nama")
+								.form-group.first
+									input#username.form-control(type="phone",placeholder="Phone",name="phone")
+								.form-group.last.mb-4
+									input#password.form-control(type="password",placeholder="Password",name="password")
+								input.btn.btn-block.btn-primary(type='submit' value='Register')
+								a.forgot-pass(href='/login') Already have an access
+
+script(type='text/javascript' src='/adminlte/plugins/jQuery/jquery-2.2.3.min.js')
+script(type='text/javascript' src='/adminlte/bootstrap/js/bootstrap.min.js')
+script(type='text/javascript' src='/adminlte/plugins/iCheck/icheck.min.js')
+script(type='text/javascript' src='/adminlte/dist/js/login.js')

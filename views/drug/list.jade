@@ -1,0 +1,89 @@
+extends ../layout/base 
+block content 
+	section.content-header 
+		h1 
+			| KIMIA FARMA
+			small Jl.Cendrawasih No.7
+		ol.breadcrumb 
+			li 
+				a(href='#') 
+					i.fa.fa-dashboard
+					| Dashboard
+			li.active Here 
+	section.content
+		.box(style='background-color: #48D1CC ;background-repeat: no-repeat;background-size: cover;')
+			.box-header.with-border
+				h3.box-title
+					| Persediaan Obat Apotek Kimia Farma
+				.box-tools.pull-right
+					button(type='button', data-widget='collapse', data-toggle='tooltip',title='collapse').btn.btn-box-tool
+						i.fa.fa-minus
+			.box-body
+				- if(messages.msg_info)
+					.alert.alert-success.alert-dismissable
+						button.close(type='button', data-dismiss='alert', aria-hidden='true')
+							| ×
+						h4
+							i.icon.fa.fa-check
+							| Success!
+						| !{messages.msg_info}
+				- if(messages.msg_error)
+					.alert.alert-danger.alert-dismissable
+						button.close(type='button', data-dismiss='alert', aria-hidden='true')
+							| ×
+						h4
+							i.icon.fa.fa-ban
+							| Alert!
+						| !{messages.msg_error}
+				a(href='drugs/add').pull-left.btn.btn-primary(style='margin-bottom:10px;')
+					i.fa.fa-plus 
+					|  Tambahkan Obat
+				.data-table
+					table.table.table-bordered(style='background-color: #cfcccb ;background-repeat: no-repeat;background-size: cover;')
+						tr
+							th
+								| No
+							th
+								| Gambar
+							th
+								| Nama
+							th
+								| Kode
+							th
+								| Kategori
+							th
+								| Produsen
+							th
+								| Stok
+							th
+								| Action
+							if messages.msg_error
+								| !{messages.msg_error}
+							else
+								for row, index in data 
+									tr
+										td #{index+1}
+										td 
+											if row.gambar
+												img(src="/images/upload/#{row.gambar}" height=130 width=150)
+											else
+												img(src="/images/upload/null.png" height=130 width=150)
+										td #{row.nama}
+										td #{row.kode}
+										td #{row.kategori}
+										td #{row.produsen}
+										td #{row.stok}
+										td
+											div(style='display:inline-block')
+												a(href='/drugs/edit/#{row.id}').btn.btn-sm.btn-primary
+														i.fa.fa-edit
+											| 
+											div(style='display:inline-block')
+												form(method='post', action='/drugs/delete/#{row.id}')
+													input(type="hidden",name="_method", value="DELETE")
+													button.btn.btn-sm.btn-danger(type='submit')
+														i.fa.fa-trash
+											| 
+											div(style='display:inline-block')
+												a(href='/drugs/info/#{row.id}').btn.btn-sm.btn-success
+													i.fa.fa-info

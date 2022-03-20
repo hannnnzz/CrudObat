@@ -1,0 +1,74 @@
+aside.main-sidebar(style="height:100%;z-index:1;padding-top:50px;position:fixed;top:0;left:0;overflow-x:hidden")
+    section.sidebar
+        .user-panel
+            .pull-left.image
+                img(src='/adminlte/dist/img/doctor.svg',alt='User Image').img-align-left.img-circle
+            .pull-left.info
+                p Admin
+        ul.sidebar-menu
+            li.header
+                | Dashboard Admin
+            li.treeview
+                |.
+            li.treeview
+                a(href='#')
+                    i.fa.fa-hospital
+                    span 
+                        |Daftar Obat
+                    span.pull-right-container
+                        i.fa.fa-angle-left.pull-right
+                ul.treeview-menu
+                    li
+                        a(href='/drugs')
+                            i.fa.fa-medkit
+                            |  Dashboard Utama
+                    li
+                        a(href='#')
+                            i.fa.fa-align-left
+                            |  Kategori
+                            span.pull-right-container
+                                i.fa.fa-angle-left.pull-right
+                        ul.treeview-menu
+                            li
+                                a(href='/category/tabletkeras')
+                                    i.fa.fa-medkit
+                                    |  Tablet Keras
+                            li
+                                a(href='/category/syrupkeras')
+                                    i.fa.fa-medkit
+                                    |  Syrup Keras
+                            li
+                                a(href='/category/generik')
+                                    i.fa.fa-medkit
+                                    |  Generik
+            li.treeview
+                a(href='#')
+                    i.fa.fa-hospital
+                    span 
+                        |Daftar Peralatan
+                    span.pull-right-container
+                        i.fa.fa-angle-left.pull-right
+                ul.treeview-menu
+                    li
+                        a(href='#')
+                            i.fa.fa-user-md
+                            |  Dashboard Utama
+                    li
+                        a(href='#')
+                            i.fa.fa-align-left
+                            |  Kategori
+                            span.pull-right-container
+                                i.fa.fa-angle-left.pull-right
+                        ul.treeview-menu
+                            li
+                                a(href='#')
+                                    i.fa.fa-stethoscope
+                                    |  Peralatan Medis
+                            li
+                                a(href='#')
+                                    i.fa.fa-suitcase
+                                    |  Peralatan Non Medis
+                            li
+                                a(href='#')
+                                    i.fa.fa-wheelchair
+                                    |  Peralatan Tunjangan

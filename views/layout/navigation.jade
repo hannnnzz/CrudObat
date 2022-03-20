@@ -1,0 +1,44 @@
+header.main-header(style="width:100%;z-index:2;position:fixed;top:0;left:0")
+    a(href='/').logo 
+        span.logo-mini
+            <b>KF</b>
+        span.logo-lg
+            <b>Data Obat</b>
+    nav(role='navigation').navbar.navbar-static-top
+        a(href='#', role='button', data-toggle='offcanvas').sidebar-toggle.fa6.sidebar-mini
+            span.sr-only Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        div.navbar-custom-menu
+            ul.nav.navbar-nav
+                    li.dropdown.user.user-menu
+                        a(href='#',data-toggle='dropdown').dropdown-toggle
+                            img(src='/adminlte/dist/img/doctor.svg',alt='UserImage').user-image
+                            span.hidden-xs
+                                | Admin
+                        ul.dropdown-menu
+                            li.user-header
+                                img(src='/adminlte/dist/img/doctor.svg',alt='UserImage').img-circle
+                                p
+                                    | Adhystira Raihannoeza - Pharmacist
+                                    small
+                                        | Member since Nov. 2018
+                            li.user-body
+                                .row
+                                    .col-xs-4.text-center
+                                        a(href='#')
+                                            | Rate
+                                    .col-xs-4.text-center
+                                        a(href='#')
+                                            | Sales
+                                    .col-xs-4.text-center
+                                        a(href='#')
+                                            | Friends
+                            li.user-footer
+                                .pull-left
+                                    a(href='#').btn.btn-default.btn-flat
+                                        | Profile
+                                .pull-right
+                                    a(href='/logout').btn.btn-default.btn-flat
+                                        | Sign out

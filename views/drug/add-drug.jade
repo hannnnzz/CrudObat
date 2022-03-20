@@ -1,0 +1,67 @@
+extends ../layout/base
+block content
+    section.content-header
+        h1
+            | Tambahkan Obat
+            small Tambahkan Daftar Obat Terbaru
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+                    | Dashboard
+                li.active Here
+    section.content
+        .box
+            .box-header.with-border
+                h3.box-title
+                    | Tambahkan Data Obat
+                .box-tools.pull-right
+                    button(type='button', data-widget='collapse', data-toggle='tooltip',title='collapse').btn.btn-box-tool
+                        i.fa.fa-minus
+            .box-body
+                form(role='form',method='post' action='/drugs/add' enctype='multipart/form-data')
+                    .row
+                        .col-xs-6
+                            .box-body
+                                - if (messages.msg_error)
+                                    .alert.alert-danger.alert-dismissable
+                                        button.close(type='button', data-dismiss='alert', aria-hidden='true')
+                                            | ×
+                                        h4
+                                            i.icon.fa.fa-ban
+                                            | Alert!
+                                        | !{messages.msg_error}
+                                .form-group
+                                    label
+                                        | Nama
+                                    input(type='text',name='nama',placeholder='Masukan Nama', autofocus).form-control
+                                .form-group
+                                    label
+                                        | Kode
+                                    input(type='text',name='kode',placeholder='Masukkan Kode').form-control
+                                .form-group
+                                    label
+                                        | Kategori
+                                    input(type='text',name='kategori',placeholder='Masukkan Kategori').form-control
+                                .form-group
+                                    label
+                                        | Produsen
+                                    input(type='text',name='produsen',placeholder='Masukkan Produsen').form-control
+                                .form-group
+                                    label
+                                        | Distributor
+                                    input(type='text',name='distributor',placeholder='Masukkan Distributor').form-control
+                                .form-group
+                                    label
+                                        | Stok
+                                    input(type='text',name='stok',placeholder='Masukkan Stok').form-control
+                                .form-group
+                                    label
+                                        | Gambar
+                                    input(type='file',name='gambar')
+                            .box-footer
+                                button(type='submit').btn.btn-primary
+                                    | Submit
+
+                                a(href='/drugs').btn.btn-primary.pull-right
+                                    | Back
